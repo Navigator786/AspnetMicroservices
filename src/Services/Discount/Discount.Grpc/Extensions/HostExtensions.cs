@@ -34,7 +34,7 @@ namespace Discount.Grpc.Extensions
                     command.CommandText = @"CREATE TABLE IF NOT EXISTS Coupon(ID SERIAL PRIMARY KEY NOT NULL, ProductName VARCHAR(24) NOT NULL, Description TEXT, Amount INT)";
                     command.ExecuteNonQuery();
 
-                    command.CommandText = "INSERT INTO coupon(productname, description, amount)SELECT 'Iphone X' AS productname, 'Iphone X description' AS description, 150 AS Price WHERE 0 = (SELECT count(*) FROM coupon) UNION SELECT 'Samsung 10' AS productname, 'Samsung 10 description' AS description, 100 AS Price WHERE 0 = (SELECT count(*) FROM coupon); ";
+                    command.CommandText = "INSERT INTO coupon(productname, description, amount)SELECT 'IPhone X' AS productname, 'Iphone X description' AS description, 150 AS Price WHERE 0 = (SELECT count(*) FROM coupon) UNION SELECT 'Samsung 10' AS productname, 'Samsung 10 description' AS description, 100 AS Price WHERE 0 = (SELECT count(*) FROM coupon); ";
                     command.ExecuteNonQuery();
 
                     logger.LogInformation("Migrated postresql database.");
